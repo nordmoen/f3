@@ -27,7 +27,7 @@
 
 extern crate cast;
 extern crate embedded_hal as hal;
-extern crate nb;
+#[macro_use(block)] extern crate nb;
 extern crate static_ref;
 
 pub extern crate stm32f30x;
@@ -38,8 +38,10 @@ pub mod examples;
 pub mod dma;
 pub mod led;
 pub mod serial;
-pub mod timer;
+pub mod spi;
 pub mod time;
+pub mod timer;
+pub mod l3gd20;
 
 pub mod frequency;
 use frequency::*;
