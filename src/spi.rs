@@ -60,8 +60,11 @@ where
     /// Initialize the SPI
     pub fn init(&self, gpio: &S::GPIO, rcc: &RCC) {
         let spi = self.0;
-        // Enable GPIOA
-        rcc.ahbenr.modify(|_, w| w.iopaen().enabled());
+        // Enable GPIOA and GPIOE
+        rcc.ahbenr.modify(|_, w| {
+            w.iopaen().enabled()
+                .iopeen().enabled()
+        });
         // Enable SPI1
         rcc.apb2enr.modify(|_, w| w.spi1en().enabled());
 

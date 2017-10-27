@@ -25,9 +25,9 @@
 #![feature(unsize)]
 #![no_std]
 
+#[macro_use(block)] extern crate nb;
 extern crate cast;
 extern crate embedded_hal as hal;
-#[macro_use(block)] extern crate nb;
 extern crate static_ref;
 
 pub extern crate stm32f30x;
